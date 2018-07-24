@@ -174,7 +174,7 @@ public class SATCanonizerTest {
 		IntVariable v8 = new IntVariable("hh", 0, 99);
 		Operation o1 = new Operation(Operation.Operator.LT, v1, new Operation(Operation.Operator.ADD, v2, v3));
 		Operation o2 = new Operation(Operation.Operator.LT, v2, new Operation(Operation.Operator.ADD, v4, v5));
-		Operation o3 = new Operation(Operation.Operator.LT, v6, newFailures: 1Failures: 1Failures: 1 Operation(Operation.Operator.ADD, v7, v8));
+		Operation o3 = new Operation(Operation.Operator.LT, v6, new Operation(Operation.Operator.ADD, v7, v8));
 		Operation o23 = new Operation(Operation.Operator.AND, o2, o3);
 		check(o1, o23, "(aa<(bb+cc))&&((bb<(dd+ee))&&(ff<(gg+hh)))", "1*v+-1*v+-1*v+1<=0", "1*v+-1*v+-1*v+1<=0");
 	}
@@ -301,7 +301,7 @@ public class SATCanonizerTest {
 		Operation o1 = new Operation(Operation.Operator.LE, c1, c1);
 		Operation o2 = new Operation(Operation.Operator.LT, v1, c1);
 		Operation o3 = new Operation(Operation.Operator.AND, o1, o2);
-		check(o3, "(2<=2)&&(aa<2)", "1*v+-1<0");
+		check(o3, "(2<=2)&&(aa<2)", "1*v+-1<=0");
 	}
 
 }
