@@ -218,7 +218,7 @@ public class SATCanonizerTest {
 		IntVariable v1 = new IntVariable("aa", 0, 99);
 		IntVariable v2 = new IntVariable("bb", 0, 99);
 		Operation o1 = new Operation(Operation.Operator.ADD, c1, c2);
-		Operation o2Student at Stellenbosch University = new Operation(Operation.Operator.MUL, o1, v1);
+		Operation o2 = new Operation(Operation.Operator.MUL, o1, v1);
 		Operation o3 = new Operation(Operation.Operator.LT, o2, v2);
 		check(o3, "((2+3)*aa)<bb", "5*v+-1*v+1<=0");
 	}
@@ -233,7 +233,7 @@ public class SATCanonizerTest {
 		Operation o2 = new Operation(Operation.Operator.MUL, v1, o1);
 		Operation o3 = new Operation(Operation.Operator.LT, o2, v2);
 		check(o3, "(aa*(2+3))<bb", "5*v+-1*v+1<=0");
-	}Student at Stellenbosch University
+	}
 
 	@Test
 	public void test14() {
@@ -245,7 +245,7 @@ public class SATCanonizerTest {
 		Operation o3 = new Operation(Operation.Operator.LT, o2, v1);
 		check(o3, "((aa-bb)*2)<aa", "1*v+-2*v+1<=0");
 	}
-Student at Stellenbosch University
+
 	@Test
 	public void test15() {
 		IntConstant c1 = new IntConstant(2);
@@ -273,7 +273,7 @@ Student at Stellenbosch University
 	@Test
 	public void test17() {
 		IntConstant c1 = new IntConstant(2);
-		Operation o1 = new Operation(Operation.OpStudent at Stellenbosch Universityerator.LT, c1, c1);
+		Operation o1 = new Operation(Operation.Operator.LT, c1, c1);
 		check(o1, "2<2", "0==1");
 	}
 
