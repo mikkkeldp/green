@@ -1,17 +1,13 @@
 language: java
 
-# script:
-#  - ant;
-#  - ant test;
-
 sudo: required
 
 services:
   - docker
-
 
 before_install:
   - docker build -t greener .
 
 script:
   - docker run greener /bin/sh -c "ant; ant test"
+  - docker logs -f --until=2s
