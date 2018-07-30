@@ -1,16 +1,18 @@
 sudo: required
 
+language: java
+
 services:
   - docker
 
-language: java
+
 
 #script:
 # - ant;
 # - ant test;
 
 before_install:
-  -docker build -t greener .
+  -docker build -t mikkkeldp/green .
 
 script:
-  - docker run greener /bin/sh -c "ant; ant test" 
+  - docker run mikkkeldp/green /bin/sh -c "ant; ant test"
