@@ -10,4 +10,3 @@ before_install:
 
 script:
   - docker run greener /bin/sh -c "ant; ant test"
-  - docker logs -f --until=2s
