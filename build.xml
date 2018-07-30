@@ -97,7 +97,7 @@
         <mkdir dir="${junit.dir}"/>
         <!-- changed holtonfail to no -->
         <junit fork="yes" printsummary="withOutAndErr" haltonfailure = "no">
-            <formatter type="xml"/>
+            <formatter type="xml" usefile="false"/>
             <test name="za.ac.sun.cs.green.EntireSuite" todir="${junit.dir}"/>
             <env key="DYLD_LIBRARY_PATH" value="lib"/>
             <env key="LD_LIBRARY_PATH" value="lib"/>
