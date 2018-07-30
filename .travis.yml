@@ -1,10 +1,17 @@
+language: java
+
+# script:
+#  - ant;
+#  - ant test;
+
 sudo: required
 
 services:
   - docker
-  
-language: java
+
+
+before_install:
+  - docker build -t greener .
 
 script:
- - ant;
- - ant test;
+  - docker run greener /bin/sh -c "ant; ant test"
