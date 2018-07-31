@@ -10,4 +10,3 @@ expected:<[1*v+-1<0]> but was:<[1*v+-1<=0]>
 
 
 This indicated that my condition for test20 was incorrect. I then changed the corresponding less than the a less than or equals which lead to all my tests passing.
-

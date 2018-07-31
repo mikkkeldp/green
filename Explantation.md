@@ -11,4 +11,4 @@ I ran the ant command followed by the ant test command. By examining the `build.
 expected:<[1*v+-1<0]> but was:<[1*v+-1<=0]>
 ```
 
- This indicated that my condition for test20 was incorrect. I then modified the condition and all the tests passed. :milky_way:
+ This indicated that my condition for test20 was incorrect. I then modified the condition and all the tests passed.
