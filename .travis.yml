@@ -6,7 +6,9 @@ services:
   - docker
 
 before_install:
-  - docker build -t greener .
+  - docker ps -aq -f status=exited
+  - docker build -t mikkel/green .
+
 
 script:
-  - docker run greener /bin/sh -c "ant; ant test"
+  - docker run mikkel/green /bin/sh -c "ant; ant test"
