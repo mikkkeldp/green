@@ -95,7 +95,6 @@
     <target name="test">
     	<echo message="java.library.path = ${z3lib};${cvc3lib}"/>
         <mkdir dir="${junit.dir}"/>
-        <!-- changed holtonfail to no -->
         <junit fork="yes" printsummary="withOutAndErr" haltonfailure = "no">
             <formatter type="xml" usefile="false"/>
             <test name="za.ac.sun.cs.green.EntireSuite" todir="${junit.dir}"/>
